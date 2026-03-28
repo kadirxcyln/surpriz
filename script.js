@@ -181,54 +181,25 @@ document.addEventListener('DOMContentLoaded', () => {
         startBtn.innerText = 'Tekrar Yakala 🔁';
         duckCountText.innerText = '10';
     });
-
-    // --- Gigi Perez "Sailor Song" YouTube API Oynatıcısı --- //
+    // --- Yerel MP3 Müzik Oynatıcısı --- //
+    const musicTrigger = document.getElementById('music-trigger');
+    const audio = document.getElementById('bg-music');
     let playing = false;
-    let ytPlayerReady = false;
-    let ytPlayer;
 
-    // YouTube API Yükleme
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    window.onYouTubeIframeAPIReady = function() {
-        ytPlayer = new YT.Player('yt-player', {
-            height: '250',
-            width: '250',
-            videoId: 'g9o2R9H_71w', // Gigi Perez - Sailor Song
-            // Chrome dosya(file://) origin hatasını aşmak için:
-            host: 'https://www.youtube.com',
-            playerVars: { 
-                'autoplay': 0, 
-                'controls': 0, 
-                'rel': 0,
-                'origin': window.location.href 
-            },
-            events: {
-                'onReady': () => { ytPlayerReady = true; }
-            }
-        });
-    };
-
-    musicBox.addEventListener('click', () => {
-        if (!ytPlayerReady) {
-            alert("Şarkı yavaş bağlantılarda bağlanmayı bekleyebilir, bi saniye sonra dener misiniz! 🎵");
-            return;
-        }
-        
-        if(!playing) {
-            musicBox.innerText = '⏸️';
-            ytPlayer.playVideo();
+    musicTrigger.addEventListener('click', () => {
+        if (!playing) {
+            audio.play().catch(e => {
+                alert("Müzik dosyan (sarki.mp3) assets klasöründe bulunamadı veya bir hata oluştu! 🎵");
+                console.error(e);
+            });
+            musicTrigger.innerText = '⏸️';
             playing = true;
         } else {
-            musicBox.innerText = '🎵';
-            ytPlayer.pauseVideo();
+            audio.pause();
+            musicTrigger.innerText = '🎵';
             playing = false;
         }
     });
-
     function fireConfetti() {
         for(let i=0; i<40; i++) {
             setTimeout(() => {
