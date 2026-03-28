@@ -1,0 +1,134 @@
+:root {
+    --bg-color: #fff0f5; /* Lavender Blush (Çok tatlı pastel pembe alt tonlu) */
+    --text-main: #4a4a4a;
+    --accent-pink: #ffa8b6; /* Pastel pink */
+    --accent-red: #ff4757; /* Havalı Kırmızı (Watermelon red) */
+    --accent-dark: #ff6b81; /* Soft Kırmızı */
+    --font-header: 'Quicksand', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+body {
+    margin: 0; padding: 0; background-color: transparent; color: var(--text-main); font-family: var(--font-body);
+    overflow-x: hidden; text-align: center;
+}
+
+/* Arkaplan Videosu Yeri */
+#bg-video {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -3;
+}
+/* Mükemmel okunabilirlik için pembe loşluk filtresi */
+.video-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(255, 240, 245, 0.65); z-index: -2;
+}
+
+/* Yukarıdan Yağan Kalpler */
+#heart-rain-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: hidden;
+}
+.falling-heart {
+    position: absolute; top: -50px; color: var(--accent-pink); font-size: 1.5rem; opacity: 0.6; animation: fall linear infinite;
+}
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Header */
+.hero {
+    padding: 80px 20px 40px; background: transparent;
+}
+h1 { font-family: var(--font-header); font-size: 3.8rem; color: var(--accent-red); margin: 0; text-shadow: 2px 2px 4px rgba(255,107,129,0.2); font-weight: 700; }
+h2 { font-family: var(--font-header); font-size: 2.8rem; color: var(--accent-red); margin-bottom: 15px; }
+.subtitle { font-size: 1.5rem; color: var(--accent-dark); margin-top: 10px; font-weight: 600; }
+
+/* Daktilo Cursor */
+.cursor { display: inline-block; width: 3px; background-color: var(--accent-red); margin-left: 2px; animation: blink 0.7s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Aşk Sayacı */
+.timer-section { padding: 30px 20px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); margin: 20px auto 40px; border-radius: 20px; max-width: 800px; border: 2px solid rgba(255, 168, 182, 0.5); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.timer-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+.time-box { background: rgba(255, 240, 245, 0.7); border: 2px dashed var(--accent-pink); border-radius: 15px; padding: 10px 20px; min-width: 70px; box-shadow: 0 5px 15px rgba(255,107,129,0.1); }
+.time-box span { font-size: 2.2rem; font-weight: 800; color: var(--accent-red); font-family: var(--font-header); }
+.time-box p { margin: 5px 0 0; font-size: 0.9rem; color: var(--accent-dark); font-weight: 600; }
+
+/* Flip Kartlar Mimarisi */
+.reasons-section { padding: 20px; margin: 0 auto; max-width: 1000px; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
+.flip-card { background-color: transparent; width: 100%; height: 160px; perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; cursor: pointer; }
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 15px; display: flex; align-items: center; justify-content: center; padding: 15px; box-sizing: border-box; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.flip-card-front { background: linear-gradient(135deg, rgba(255,240,245,0.7), rgba(255,168,182,0.6)); backdrop-filter: blur(5px); border: 2px solid var(--accent-red); color: var(--accent-red); }
+.flip-card-front span { font-size: 3rem; font-family: var(--font-header); font-weight: 800; }
+.flip-card-back { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px); color: var(--accent-dark); transform: rotateY(180deg); border: 2px solid var(--accent-pink); }
+.flip-card-back p { margin: 0; font-weight: 600; font-size: 0.95rem; line-height: 1.4; }
+
+/* Polaroid Galerisi */
+.gallery-section { padding: 40px 20px; }
+.gallery-desc { font-size: 1.2rem; color: #7f8fa6; margin-bottom: 40px; }
+.polaroid-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 0 auto; max-width: 1100px; }
+
+/* Başlangıçta tüm polaroidler gizli ve ekranın ortasına/kalbe toplanmış halde */
+.polaroid { 
+    background: white; padding: 10px 10px 35px; box-shadow: 0 10px 20px rgba(255,107,129,0.15); border-radius: 8px; 
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); width: 220px; cursor: pointer; 
+    transform: scale(0.1) translateY(800px) rotate(45deg); opacity: 0;
+}
+.polaroid img { width: 100%; height: 220px; object-fit: cover; border-radius: 5px; }
+.polaroid .caption { font-family: var(--font-header); font-size: 1.5rem; margin-top: 15px; color: var(--accent-red); font-weight: 700; }
+
+/* Patladıktan Sonra Yerine Oturduğu An */
+.polaroid.exploded.tilt-left { transform: rotate(-5deg) scale(1); opacity: 1; }
+.polaroid.exploded.tilt-right { transform: rotate(5deg) scale(1); opacity: 1; }
+
+.polaroid.exploded:hover { transform: scale(1.1) rotate(0deg) translateY(-10px); box-shadow: 0 15px 30px rgba(255,71,87,0.4); z-index: 10; }
+
+/* Oyun Bölümü */
+.game-section { padding: 40px 20px; margin: 40px 20px 80px; border-radius: 30px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(255,168,182,0.3); border: 2px solid rgba(255,168,182,0.5); }
+.duck-counter-text { font-size: 1.5rem; font-weight: 800; color: var(--accent-red); background: rgba(255, 240, 245, 0.8); display: inline-block; padding: 10px 25px; border-radius: 20px; margin-top: 10px; border: 2px dashed var(--accent-pink); }
+
+.game-board { 
+    position: relative; width: 100%; max-width: 800px; height: 450px; margin: 30px auto 10px; background: rgba(224, 247, 250, 0.5); backdrop-filter: blur(5px); border: 4px solid var(--accent-pink); border-radius: 20px; 
+    display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+.start-btn { 
+    font-family: var(--font-header); font-size: 1.8rem; padding: 15px 50px; background: var(--accent-red); color: white; border: none; border-radius: 40px; cursor: pointer; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 8px 20px rgba(255,71,87,0.4); font-weight: 700; 
+}
+.start-btn:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 12px 25px rgba(255,71,87,0.6); }
+
+/* Ördekler */
+.duck { 
+    position: absolute; font-size: 3.5rem; cursor: pointer; user-select: none; transition: transform 0.2s; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+}
+.duck:hover { transform: scale(1.2); }
+
+/* Kalp Partikülleri */
+.particle-heart { position: absolute; font-size: 2.2rem; pointer-events: none; animation: popHeart 0.8s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+@keyframes popHeart { 0% { opacity: 1; transform: scale(0.5); } 50% { transform: scale(1.5) translateY(-30px); } 100% { opacity: 0; transform: scale(2) translateY(-60px); } }
+
+/* Gizli Mektup */
+.secret-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.8s; }
+.secret-overlay.show { opacity: 1; pointer-events: auto; }
+.letter-container { background: #fff0f5; padding: 50px; border-radius: 20px; max-width: 600px; text-align: center; position: relative; box-shadow: 0 20px 60px rgba(255,71,87,0.5); transform: translateY(50px) scale(0.9); transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 3px dashed var(--accent-pink); }
+.secret-overlay.show .letter-container { transform: translateY(0) scale(1); }
+.letter-container h3 { font-family: var(--font-header); font-size: 3.2rem; color: var(--accent-red); margin-top: 0; }
+.letter-container p { font-size: 1.3rem; line-height: 1.8; font-weight: 600; color: #57606f; }
+.letter-container p:last-of-type { font-family: var(--font-header); font-size: 2rem; color: var(--accent-red); text-align: right; margin-top: 30px; font-weight: 700; }
+.close-btn { display: inline-block; padding: 15px 40px; margin-top: 30px; background: white; border: 2px solid var(--accent-pink); border-radius: 30px; cursor: pointer; font-size: 1.2rem; font-weight: 700; color: var(--accent-red); transition: 0.3s; font-family: var(--font-header); }
+.close-btn:hover { background: var(--accent-pink); color: white; }
+
+/* Müzik Kutusu */
+.music-box { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer; box-shadow: 0 5px 20px rgba(255,71,87,0.3); transition: 0.3s; animation: pulse 2s infinite; z-index: 900; }
+.music-box:hover { transform: scale(1.15) rotate(10deg); }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.5); } 70% { box-shadow: 0 0 0 20px rgba(255, 71, 87, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); } }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; } h2 { font-size: 2.2rem; }
+    .game-board { height: 350px; }
+    .polaroid { width: 90%; max-width: 300px; margin-bottom: 20px; }
+    .letter-container { width: 85%; padding: 30px; }
+    .letter-container h3 { font-size: 2.5rem; } .letter-container p { font-size: 1.1rem; }
+}

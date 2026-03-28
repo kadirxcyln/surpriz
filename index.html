@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Seviyorum Melike 💖</title>
+    <!-- Tatlı ve Okunabilir Google Fontları -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Arkaplan Sinematik Video -->
+    <video autoplay loop muted playsinline id="bg-video">
+        <!-- Windows'un gizli uzantılarına göre çiftlenmiş ismi çekmek için .mp4.mp4 -->
+        <source src="assets/arkaplan.mp4.mp4" type="video/mp4">
+    </video>
+    <!-- Orijinal pastel tema uyumunu koruması için şeffaf filtre katmanı -->
+    <div class="video-overlay"></div>
+
+    <!-- Animasyonlu Arkaplan Kalpleri -->
+    <div id="heart-rain-container"></div>
+
+    <!-- Karşılama Ekranı -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Daha Nice Anılara Melikem</h1>
+            <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
+        </div>
+    </header>
+
+    <!-- Birliktelik Sayacı -->
+    <section class="timer-section">
+        <h2 style="font-size:2rem;">Seninle Geçen Her Anımız...</h2>
+        <div id="love-timer" class="timer-container">
+            <div class="time-box"><span id="days">0</span><p>Gün</p></div>
+            <div class="time-box"><span id="hours">00</span><p>Saat</p></div>
+            <div class="time-box"><span id="minutes">00</span><p>Dakika</p></div>
+            <div class="time-box"><span id="seconds">00</span><p>Saniye</p></div>
+        </div>
+    </section>
+
+    <!-- Seni Sevmemin 10 Nedeni -->
+    <section class="reasons-section">
+        <h2>Seni Neden Mi Bu Kadar Çok Seviyorum?</h2>
+        <div class="cards-grid">
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>1</span></div><div class="flip-card-back"><p>yemyeşil oksijen veren ağaç gibi olan gözlerin</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>2</span></div><div class="flip-card-back"><p>beni her koşulda sevmen</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>3</span></div><div class="flip-card-back"><p>en soğuk mevsimleri buzulları eriten gülüşün</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>4</span></div><div class="flip-card-back"><p>güneş gibi olan saçların</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>5</span></div><div class="flip-card-back"><p>fındık gibi olan burnun</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>6</span></div><div class="flip-card-back"><p>en tatlı tatlıdan tatlı olan sürekli öpmek istediğim yanakların</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>7</span></div><div class="flip-card-back"><p>o tarif edilemez olan kokun</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>8</span></div><div class="flip-card-back"><p>mükemmel enerjin</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>9</span></div><div class="flip-card-back"><p>bana hissettirdiğin her şeyin</p></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><span>10</span></div><div class="flip-card-back"><p>ve sayamadığım nicesi...</p></div></div></div>
+        </div>
+    </section>
+
+    <!-- Fotoğraf Galerisi (Polaroid) -->
+    <section class="gallery-section">
+        <h2>BAKKKK BİZZZZZ</h2>
+        <div class="polaroid-container">
+            <div class="polaroid tilt-left"><img src="assets/1.jpg" alt="1"><div class="caption">yavruuuum</div></div>
+            <div class="polaroid tilt-right"><img src="assets/2.jpg" alt="2"><div class="caption">BAK BİZ</div></div>
+            <div class="polaroid tilt-left"><img src="assets/3.jpg" alt="3"><div class="caption">en güzel günlerden biri</div></div>
+            <div class="polaroid tilt-right"><img src="assets/4.jpg" alt="4"><div class="caption">tipe bak yerim</div></div>
+            <div class="polaroid tilt-left"><img src="assets/5.jpg" alt="5"><div class="caption">İyi Ki Geldin</div></div>
+            <div class="polaroid tilt-right"><img src="assets/6.jpg" alt="6"><div class="caption">en güzel öpücük</div></div>
+            <div class="polaroid tilt-left"><img src="assets/7.jpg" alt="7"><div class="caption">ÖLDÜM TİPE BAK</div></div>
+            <div class="polaroid tilt-right"><img src="assets/8.jpg" alt="8"><div class="caption">Gözlerin Çok Güzel</div></div>
+            <div class="polaroid tilt-left"><img src="assets/9.jpg" alt="9"><div class="caption">Sen ve Ben</div></div>
+            <div class="polaroid tilt-right"><img src="assets/10.jpg" alt="10"><div class="caption">Sonu Olmayan Aşk</div></div>
+            <div class="polaroid tilt-left"><img src="assets/11.jpg" alt="11"><div class="caption">Hiç Bırakma</div></div>
+            <div class="polaroid tilt-right"><img src="assets/12.jpg" alt="12"><div class="caption">Hep Seninle...</div></div>
+            <div class="polaroid tilt-left"><img src="assets/13.jpg" alt="13"><div class="caption">Canımın İçi</div></div>
+            <div class="polaroid tilt-right"><img src="assets/14.jpg" alt="14"><div class="caption">Her Zaman Yanımda</div></div>
+            <div class="polaroid tilt-left"><img src="assets/15.jpg" alt="15"><div class="caption">AY GİBİ SOĞUK VE GÜNEŞ KADAR HOT</div></div>
+            <div class="polaroid tilt-right"><img src="assets/16.jpg" alt="16"><div class="caption">yerimmmm yerimmm</div></div>
+            <div class="polaroid tilt-left"><img src="assets/17.jpg" alt="17"><div class="caption">Bizim Hikayemiz</div></div>
+            <div class="polaroid tilt-right"><img src="assets/18.jpg" alt="18"><div class="caption">İki Yarımdan...</div></div>
+            <div class="polaroid tilt-left"><img src="assets/19.jpg" alt="19"><div class="caption">Sade ve Sadece</div></div>
+            <div class="polaroid tilt-right"><img src="assets/20.jpg" alt="20"><div class="caption">bne</div></div>
+        </div>
+    </section>
+
+    <!-- Ördek Oyunu -->
+    <section class="game-section" id="game-section">
+        <div class="game-header">
+            <h2>askim balim böcegim</h2>
+            <p>vak vak ördeğin vardı bende bi oyun yaptım lazuzum 🦆</p>
+            <p class="duck-counter-text">Yakalanacak Ördek: <span id="duck-count">10</span></p>
+        </div>
+        
+        <div class="game-board" id="game-board">
+            <button class="start-btn" id="start-btn">Oyuna Başla 💖</button>
+        </div>
+    </section>
+
+    <!-- Gizli Mektup Alanı (Başlangıçta gizli) -->
+    <div class="secret-overlay" id="secret-overlay">
+        <div class="letter-container">
+            <h3>Selam Sevgilim ❤️</h3>
+            <p>nice daha güzel birlikte anılara prensesim iyi ki ailem oldun iyi ki benim oldun her geçen gün seni daha da çok seviyorum umarım iyi bi sevgiliyimdir...</p>
+            <p>sana aşığım bi tanecik zipzipim benim</p>
+            <button class="close-btn" id="close-letter">Mektubu Kapat ✨</button>
+        </div>
+    </div>
+
+    <!-- Müzik Kutusu Eklentisi -->
+    <div class="music-box" title="Şarkımızı Çal">
+        🎵
+    </div>
+
+    <!-- YouTube Gigi Perez Altyapısı -->
+    <div id="yt-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
